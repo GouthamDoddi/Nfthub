@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, {useEffect} from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -7,13 +7,21 @@ import Typography from '@mui/material/Typography';
 import { ExpandMore } from '@material-ui/icons';
 import { AccordionItemProps } from '../types';
 import { accordionData } from '../data';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 
 const AccordionItem: React.FC<AccordionItemProps> = ({ title, description }) => {
+    useEffect(() => {
+        AOS.init({
+             duration: 800,
+             once: false,
+           })
+     }, [])
+
   return (
-    <Accordion>
+    <Accordion data-aos="fade-right">
       <AccordionSummary
         expandIcon={<ExpandMore />}
         aria-controls={`${title}-content`}

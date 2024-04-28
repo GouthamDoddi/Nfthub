@@ -5,13 +5,17 @@ import { RoadmapCardData } from '../types'
 import { Divider, Typography } from '@mui/material'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const RoadmapCard: React.FC<RoadmapCardData> = ({ header, headerMain, description, percentage }) => {
 
-    
-    // const { ref, inView } = useInView({
-    //     threshold: 0.5, // Adjust threshold as needed
-    // });
+     useEffect(() => {
+         AOS.init({
+              duration: 800,
+              once: false,
+            })
+      }, [])
 
     useGSAP(() => {
         gsap.to(`#circle-${percentage}`, {
@@ -25,7 +29,7 @@ const RoadmapCard: React.FC<RoadmapCardData> = ({ header, headerMain, descriptio
     });
 
   return (
-    <div className='w-250 h-300 border p-4 rounded-xl' style={{ borderColor: 'lightgray' }}>
+    <div data-aos="fade-up" className='w-250 h-300 border p-4 rounded-xl' style={{ borderColor: 'lightgray' }}>
         <div className='flex flex-row justify-between'>
             <p className='custom-gradient font-bold text-lg mt-5 uppercase'>{ header }</p>
             

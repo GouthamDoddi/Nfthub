@@ -5,7 +5,7 @@ import CustomHeader from './components/CustomHeader'
 
 const About: React.FC = () => {
   return (
-    <section id="about">
+    <section id="about" className="flex flex-col items-center">
         <div className='w-full flex flex-col items-center mt-28'> 
             <div className='w-full'>
                 <CustomHeader plainText={'How it'} colouredText={'Works!'} />
@@ -24,4 +24,4 @@ const About: React.FC = () => {
   )
 }
 
-export default About
+export default About;
