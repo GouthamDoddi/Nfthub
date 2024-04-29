@@ -11,7 +11,7 @@ To run this project locally, follow these two simple steps:
 Run the following command to install all the required dependencies:
 
 ```bash
-npm install
+npm install -f
 ```
 
 ### Step 2: Start Development Server
