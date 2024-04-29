@@ -12,6 +12,7 @@ import 'aos/dist/aos.css';
 
 
 
+
 const AccordionItem: React.FC<AccordionItemProps> = ({ title, description }) => {
     useEffect(() => {
         AOS.init({
